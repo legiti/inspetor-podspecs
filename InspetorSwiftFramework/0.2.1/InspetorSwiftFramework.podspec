@@ -103,7 +103,8 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
   #
 
   # spec.platform     = :ios
-  spec.platform     = :ios, "11.0"
+  spec.platform     = :ios
+  spec.ios.deployment_target = "11.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
