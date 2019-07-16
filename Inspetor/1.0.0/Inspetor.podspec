@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint InspetorSwiftFramework.podspec' to ensure this is a
+#  Be sure to run `pod spec lint Inspetor.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see https://docs.cocoapods.org/specification.html
@@ -129,9 +129,9 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "InspetorSwiftFramework.framework/Headers/*.h"
-  spec.public_header_files = "InspetorSwiftFramework.framework/Headers/*.h"
-  spec.vendored_frameworks = "InspetorSwiftFramework.framework"
+  spec.source_files  = "Inspetor.framework/Headers/*.h"
+  spec.public_header_files = "Inspetor.framework/Headers/*.h"
+  spec.vendored_frameworks = "Inspetor.framework"
   spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
