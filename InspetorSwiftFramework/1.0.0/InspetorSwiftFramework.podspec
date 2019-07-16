@@ -173,7 +173,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency "SnowplowTracker", "~> 1.0"
+  spec.dependency "SnowplowTracker", "~> 1.1.2"
 
   spec.swift_version = "4.2"
 
