@@ -103,7 +103,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
   #
 
   spec.platform     = :ios
-  spec.ios.deployment_target = "8.0"
+  spec.ios.deployment_target = "9.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -175,6 +175,8 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   spec.dependency "SnowplowTracker", "~> 1.1.2"
   spec.dependency "INTULocationManager"  
+
+  spec.xcconfig = { "GCC_PREPROCESSOR_DEFINITIONS" => "INTU_ENABLE_LOGGING=0" }
 
   spec.swift_version = "4.2"
 
