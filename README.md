@@ -1,14 +1,17 @@
 <p>
-  <img src="https://github.com/inspetor/slate/blob/master/source/images/logo-color.png" width="200" height="40" alt="Inspetor Logo"> </img>
+  <img src="https://inspetor-assets.s3-sa-east-1.amazonaws.com/images/inspetor-logo.png" width="200" height="40" alt="Inspetor Logo">
 </p>
 
 # Inspetor Antifraud
-Antrifraud Inspetor library for Android.
+Antrifraud Inspetor library for iOS.
 
 ## Description
 Inspetor is an product developed to help your company to avoid fraudulent transactions. This README file should help you to integrate the Inspetor iOS library into your product with a couple steps. 
 
 P.S.: the library was made in Swift and all of the code you'll see here is Swift as well.
+
+## Demo
+If you think that this tutorial and whatever you saw 'til now wasn't clear enough, maybe you need some hand's on. Thinking about that, our team builded an Demo App to test our library and you can clone from [here](https://github.com/inspetor/inspetor-ios-demo-app). You'll find all of our tracker requests and how to instantiante our library with the best practices.
 
 ## Setup Guide
 This is the step-by-step Inspetor integration:
@@ -24,12 +27,12 @@ When you import the Inspetor library you will see that you are actually installi
 ### Library setup
 You must provide your config to setup our library. To do that, we created a data class called InspetorConfig (duh) and you just have to do something like that:
 
-All the access to the Inspetor functions is made through our **sharedInstance** that is available by calling the `Inspetor.sharedInstance`. But before you can call any of our functions you need to configure the library. To do that all you need is the following code bellow.
+All the access to the Inspetor functions is made through our `sharedInstance()` that is available by calling the `Inspetor.sharedInstance()`. But before you can call any of our functions you need to configure the library. To do that all you need is call the function `setup` from our `sharedInstance()` and pass your configurations. You can see an example bellow:
 
 You **should** instantiate the Inspetor Library in your application `AppDelegate` in the `didFinishLaunchingWithOptions` function.
 
 ```
-do {
+  do {
   try Inspetor.sharedInstance().setup(appId: "123", trackerName: "cool.name", devEnv: true)
 } catch TrackerException.internalError(let message) {
   print(message)
@@ -50,7 +53,7 @@ Here we will show you some details to be aware in you are calling the Inspetor t
 All of out *track functions* can throw exceptions, but the only exception they will through is if you forget to configure the Inspetor Library before calling one of them. Because of that the Inspetor class have a function called `isConfigured()` that returns a boolean saying if you have configured or not the Inspetor Library. We recommend that when you call any of our tracking functions you check if the Inspetor Library is configured. Here is an example on how to do that:
 
 ```
-if (Inspetor.sahredInstance().isConfigured()) {
+if (Inspetor.sharedInstance().isConfigured()) {
     try! Inspetor.sharedInstance().trackAccountCreation(accountId: "123")
 }
 ```
@@ -58,4 +61,5 @@ if (Inspetor.sahredInstance().isConfigured()) {
 ### Models
 If you are comming from one of our backend libraries you will notice that we do not use models in our frontend libraries. Here you just need to send us the id of the model.
 
-**For more info you should check the [Inspetor Frontend docs](https://inspetor.github.io/docs-frontend)
+## More Information
+For more info you should check the [Inspetor Frontend docs](https://inspetor.github.io/docs-frontend)
