@@ -29,7 +29,13 @@ All the access to the Inspetor functions is made through our **sharedInstance** 
 You **should** instantiate the Inspetor Library in your application `AppDelegate` in the `didFinishLaunchingWithOptions` function.
 
 ```
-  Inspetor.sharedInstance.inspetorConfig = InspetorConfig(appId: "cool.name", trackerName: "ID123", devEnv: true)
+do {
+  try Inspetor.sharedInstance().setup(appId: "123", trackerName: "cool.name", devEnv: true)
+} catch TrackerException.internalError(let message) {
+  print(message)
+} catch {
+  print("Error")
+}
 ```
 
 The ***"appId"*** is an unique identifier that the Inspetor Team will provide to you. The ***"trackerName"*** is a name that will help us to find your data in our database and we'll provide you with a couple of them. The ***"devEnv"*** is a boolean statement that you set to indicate that your are testing the library (development enviroment). It's set to false by default.
@@ -44,8 +50,8 @@ Here we will show you some details to be aware in you are calling the Inspetor t
 All of out *track functions* can throw exceptions, but the only exception they will through is if you forget to configure the Inspetor Library before calling one of them. Because of that the Inspetor class have a function called `isConfigured()` that returns a boolean saying if you have configured or not the Inspetor Library. We recommend that when you call any of our tracking functions you check if the Inspetor Library is configured. Here is an example on how to do that:
 
 ```
-if (Inspetor.isConfigured()) {
-    try! Inspetor.sharedInstance.trackAccountCreation(accountId: "123")
+if (Inspetor.sahredInstance().isConfigured()) {
+    try! Inspetor.sharedInstance().trackAccountCreation(accountId: "123")
 }
 ```
 
