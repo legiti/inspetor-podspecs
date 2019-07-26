@@ -32,7 +32,7 @@ All the access to the Inspetor functions is made through our `sharedInstance()` 
 You **should** instantiate the Inspetor Library in your application `AppDelegate` in the `didFinishLaunchingWithOptions` function.
 
 ```
-  do {
+do {
   try Inspetor.sharedInstance().setup(appId: "123", trackerName: "cool.name", devEnv: true)
 } catch TrackerException.requiredConfig(let code, let message) {
   print("code: \(code) - message: \(message)")
