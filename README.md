@@ -17,7 +17,7 @@ If you think that this tutorial and whatever you saw 'til now wasn't clear enoug
 This is the step-by-step Legiti integration:
 
 ### Library Repositories
-The Legiti iOS Library can be installed through [CocoaPods](https://cocoapod.org). To install all you have to do is follow this steps:
+The Legiti iOS Library can be installed through [CocoaPods](https://cocoapods.org). To install all you have to do is follow this steps:
 
 1) Add this to your Podfile: `pod 'Legiti'` (this uses the latest version).
 2) Run `pod install`.
